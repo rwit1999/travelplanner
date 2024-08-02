@@ -17,7 +17,7 @@ const Login = () => {
         console.log(SHA256(password).toString());
         
         try {
-            const response = await fetch('/api/admin/login', {
+            const response = await fetch('http://localhost:3000/api/admin/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

@@ -4,7 +4,7 @@ import { Button, Chip } from '@nextui-org/react'
 import axios from 'axios'
 import Image from 'next/image'
 import { useRouter, useSearchParams } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import { FaChevronLeft } from 'react-icons/fa'
 
 const Trips = () => {
@@ -15,7 +15,7 @@ const Trips = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await axios.get(`/api/city-trips?city=${searchCity}`)
+            const data = await axios.get(`http://localhost:3000/api/city-trips?city=${searchCity}`)
             if (data.data.trips) setTrips(data.data.trips)
         }
         if (searchCity) {
@@ -24,6 +24,9 @@ const Trips = () => {
     }, [searchCity])
 
     return (
+        <Suspense fallback={<div>Loading...</div>}>
+
+       
         <div className="p-8 space-y-8 bg-gray-100 min-h-screen">
             <Button 
                 className="mb-6" 
@@ -78,6 +81,7 @@ const Trips = () => {
                 ))}
             </div>
         </div>
+        </Suspense>
     )
 }
 

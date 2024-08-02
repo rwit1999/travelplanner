@@ -37,15 +37,11 @@ export async function POST(request: Request) {
       { status: 200 }
     );
   } catch (error) {
-    if (error instanceof Prisma.PrismaClientKnownRequestError) {
-      if (error.code === "P2002") {
-        return NextResponse.json({ message: error.message }, { status: 400 });
-      }
-      return NextResponse.json({ message: error.message }, { status: 400 });
-    }
-  }
+    
+   
   return NextResponse.json(
     { message: "An unexpected error occurred." },
     { status: 500 }
   );
+}
 }

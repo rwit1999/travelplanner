@@ -76,7 +76,7 @@ export default function App() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const data = await axios.post('/api/booking/get-bookings', {
+        const data = await axios.post('http://localhost:3000/api/booking/get-bookings', {
           userId: userInfo?.id,
         });
         setBookings(data.data.bookings);

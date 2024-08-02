@@ -1,7 +1,7 @@
 'use client'
 import { Elements } from '@stripe/react-stripe-js'
 import { useSearchParams } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import CheckoutForm from './components/checkout-form/checkout-form'
 import { loadStripe } from '@stripe/stripe-js'
 
@@ -18,6 +18,7 @@ const Checkout = () => {
     },[client_secret])
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <div>
         {
             clientSecret && (
@@ -27,6 +28,7 @@ const Checkout = () => {
             )
         }
     </div>
+    </Suspense>
   )
 }
 
