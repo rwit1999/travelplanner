@@ -1,9 +1,12 @@
 'use client'
+import { apiClient } from "@/lib";
 import { useAppStore } from "@/store/store";
+import { ADMIN_API_ROUTES } from "@/utils";
 import { Button, Card, CardBody, CardFooter, CardHeader, Input } from "@nextui-org/react";
 import { SHA256 } from "crypto-js";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { userInfo } from "os";
 import React, { useState } from "react";
 
 
@@ -17,7 +20,7 @@ const Login = () => {
         console.log(SHA256(password).toString());
         
         try {
-            const response = await fetch('http://localhost:3000/api/admin/login', {
+            const response = await fetch('/api/admin/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

@@ -14,7 +14,7 @@ const ScrapeData = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const data = await apiClient.get('http://localhost:3000/admin/job-details')
+        const data = await apiClient.get('/admin/job-details')
         setJobs(data.data.jobs)
       } catch (error) {
         console.error('Error fetching job details:', error)

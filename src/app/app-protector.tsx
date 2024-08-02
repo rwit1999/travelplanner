@@ -13,7 +13,7 @@ const AppProtector = () => {
   useEffect(() => {
     if (!userInfo) {
       const getUserInfo = async () => {
-        const response = await axios.get('http://localhost:3000/api/auth/me');
+        const response = await axios.get('/api/auth/me');
         if (response.data.userInfo) {
           setUserInfo(response.data.userInfo);
           console.log(userInfo);
