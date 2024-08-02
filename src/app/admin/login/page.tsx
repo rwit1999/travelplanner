@@ -1,11 +1,9 @@
 'use client'
 import { useAppStore } from "@/store/store";
-import { ADMIN_API_ROUTES } from "@/utils";
 import { Button, Card, CardBody, CardFooter, CardHeader, Input } from "@nextui-org/react";
 import { SHA256 } from "crypto-js";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { userInfo } from "os";
 import React, { useState } from "react";
 
 
