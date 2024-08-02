@@ -1,5 +1,4 @@
 'use client'
-import { apiClient } from "@/lib";
 import { useAppStore } from "@/store/store";
 import { ADMIN_API_ROUTES } from "@/utils";
 import { Button, Card, CardBody, CardFooter, CardHeader, Input } from "@nextui-org/react";
