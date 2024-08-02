@@ -1,6 +1,6 @@
-import { prisma } from '@/lib';
+import prisma from '../../../../lib/prisma'
 import { NextResponse } from 'next/server'
-import { jobsQueue } from '@/lib/queue'
+import { jobsQueue } from '../../../../lib/queue'
 
 export async function POST(req:Request) {
     try{

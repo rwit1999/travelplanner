@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { SHA256 as sha256 } from "crypto-js";
 import { SignJWT } from "jose";
-import { prisma } from '@/lib';
+import prisma from '../../../../lib/prisma'
 
 import { cookies } from "next/headers";
 
